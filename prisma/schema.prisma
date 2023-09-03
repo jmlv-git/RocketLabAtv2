@@ -1,0 +1,18 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Produto {
+  nome String @id
+  preco    Int //esse preco vai ser o valor recebido*100, para poder conter a parte decimal  
+  imagem String //Será a url da imagem
+
+}
